@@ -7,6 +7,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script type="text/javascript" src="./resources/js/product.js"></script>
 <meta charset="UTF-8">
 <title>상품 상세 정보</title>
 </head>
@@ -34,8 +35,11 @@
 				<p><b>분류</b> : <%= product.getCategory() %>
 				<p><b>재고 수</b> : <%= product.getUnitsInStock() %>
 				<h4><%= df.format(price) %> 원</h4>
-				<p><a href="#" class="btn btn-info"> 상품 주문 &raquo;</a>
-				<a href="products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
+				<p> <form name="addForm" action="./addCart.jsp?id=<%=product.getProductId()%>" method="post">
+						<a href="#" class="btn btn-info" onclick="addToCart()"> 상품 주문 &raquo;</a>
+						<a href="./cart.jsp" class="btn btn-warning"> 장바구니 &raquo;</a> 
+						<a href="./products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
+					</form>
 			</div>
 			<div class="col-md-6 al">
 				<img alt="" src="https://thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/83230728105284-6126e577-5207-43f7-bed3-7ec87a5956e9.jpg">

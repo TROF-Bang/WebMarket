@@ -13,5 +13,7 @@ create table member (
     primary key(id) 
 ) default CHARSET=utf8;
 
+insert into member VALUES("admin","admin1234","admin","","","","","","");
+
 select * from member;
-drop table member;
+truncate table member;

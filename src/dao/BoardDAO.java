@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import dto.BoardDTO;
+import mvc.DBConnection;
 
 public class BoardDAO {
 
