@@ -4,6 +4,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script type="text/javascript" src="./resources/js/add_product.js.js"></script>
 <meta charset="UTF-8">
 <title>상품 등록</title>
 </head>
@@ -70,8 +71,14 @@
 				</div>
 			</div>
 			<div class="form-group row">
+				<label class="col-sm-2">상품 이미지 URL</label>
+				<div class="col-sm-3">
+					<input type="text" name="img" class="form-control">
+				</div>			
+			</div>
+			<div class="form-group row">
 				<div class="col-sm-offset-2 col-sm-10">
-					<input type="submit" class="btn btn-primary" value="등록">
+					<input type="submit" class="btn btn-primary" value="등록" onclick="addToProduct()">
 				</div>
 			</div>
 		</form>	

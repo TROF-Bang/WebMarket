@@ -1,3 +1,4 @@
+drop table product;
 CREATE TABLE IF NOT EXISTS product(
 	p_id VARCHAR(10) NOT NULL,
 	p_name VARCHAR(20),
@@ -7,8 +8,10 @@ CREATE TABLE IF NOT EXISTS product(
 	p_manufacturer VARCHAR(20),
 	p_unitsInStock LONG,
 	p_condition VARCHAR(20),
-	p_fileName  VARCHAR(20),
+	p_fileName  VARCHAR(100),
 	PRIMARY KEY (p_id)
 )default CHARSET=utf8;
 
 desc product;
+
+select * from member;

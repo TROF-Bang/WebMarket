@@ -2,7 +2,7 @@
 <%@page import="dto.Product"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session"></jsp:useBean>  
+<jsp:useBean id="productDAO" class="test.ProductDAO"></jsp:useBean>  
 <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
@@ -35,8 +35,8 @@
 			<div class="col-md-4">
 				<a>
 				<img onclick="javascript:location.href='product.jsp?id=<%= id %>';" 
-				alt="#" width="300" height="400"
-				src="https://thumbnail8.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/521016655425335-738243bf-69ac-44fa-a20c-0ef998f13d88.jpg">
+				alt="#" width="400" height="400"
+				src="<%= product.getFilename() %>">
 				<span class=""></span>
 				</a>
 				<h3><%= product.getPname() %></h3>

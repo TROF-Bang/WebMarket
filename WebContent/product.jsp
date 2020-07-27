@@ -2,11 +2,11 @@
 <%@page import="dto.Product"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session"></jsp:useBean>
+<jsp:useBean id="productDAO" class="test.ProductDAO"></jsp:useBean>    
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="./resources/css/bootstrap.css" />
 <script type="text/javascript" src="./resources/js/product.js"></script>
 <meta charset="UTF-8">
 <title>상품 상세 정보</title>
@@ -21,8 +21,8 @@
 	</div>
 	<% 
 		String id = request.getParameter("id");
-		Product product = productDAO.getProductById(id);
-		int price = product.getUnitPrice();
+		Product product = productDAO.getProduct(id);
+		//int price = product.getUnitPrice();
 		DecimalFormat df = new DecimalFormat("###,###");
 	%>
 	<div class="container">
@@ -34,7 +34,7 @@
 				<p><b>제조사</b> : <%= product.getManufacturer() %>
 				<p><b>분류</b> : <%= product.getCategory() %>
 				<p><b>재고 수</b> : <%= product.getUnitsInStock() %>
-				<h4><%= df.format(price) %> 원</h4>
+				<h4><%= product.getUnitPrice() %> 원</h4>
 				<p> <form name="addForm" action="./addCart.jsp?id=<%=product.getProductId()%>" method="post">
 						<a href="#" class="btn btn-info" onclick="addToCart()"> 상품 주문 &raquo;</a>
 						<a href="./cart.jsp" class="btn btn-warning"> 장바구니 &raquo;</a> 
@@ -42,7 +42,7 @@
 					</form>
 			</div>
 			<div class="col-md-6 al">
-				<img alt="" src="https://thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/83230728105284-6126e577-5207-43f7-bed3-7ec87a5956e9.jpg">
+				<img alt="" width="400" height="400" src="<%= product.getFilename() %>">
 			</div>
 		</div>
 		<hr>
