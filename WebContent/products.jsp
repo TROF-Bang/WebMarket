@@ -2,7 +2,7 @@
 <%@page import="dto.Product"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="productDAO" class="test.ProductDAO"></jsp:useBean>  
+<jsp:useBean id="productDAO" class="dao.ProductDAO"></jsp:useBean>  
 <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>

@@ -1,6 +1,9 @@
+create database WebMarketDB;
+
 USE WebMarketDB;
 
-create table member ( 
+
+create table members ( 
     id varchar(10) not null,
     password varchar(10) not null,
     name varchar(10) not null,
@@ -13,7 +16,5 @@ create table member (
     primary key(id) 
 ) default CHARSET=utf8;
 
-insert into member VALUES("admin","admin1234","admin","","","","","","");
-
-select * from member;
-truncate table member;
+select * from members;
+truncate table members;

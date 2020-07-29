@@ -5,14 +5,19 @@
 
 <%
 	String sessionId = (String) session.getAttribute("sessionId");
+	System.out.println("board.list sessionId : " + sessionId);
 	List boardList = (List) request.getAttribute("boardlist");
+	System.out.println("board.list boardList : " + boardList);
 	int total_record = ((Integer) request.getAttribute("total_record")).intValue();
+	System.out.println("board.list  total_record : " + total_record);
 	int pageNum = ((Integer) request.getAttribute("pageNum")).intValue();
+	System.out.println("board.list pageNum : " + pageNum);
 	int total_page = ((Integer) request.getAttribute("total_page")).intValue();
+	System.out.println("board.list total_page : " + total_page);
 %>
 <html>
 <head>
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 <title>Board</title>
 <script type="text/javascript">
 	function checkForm() {	

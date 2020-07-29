@@ -89,7 +89,7 @@ public class BoardDAO {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
-			while (rs.absolute(index)) {
+			while (rs.next()) {
 				BoardDTO board = new BoardDTO();
 				board.setNum(rs.getInt("num"));
 				board.setId(rs.getString("id"));
@@ -100,6 +100,27 @@ public class BoardDAO {
 				board.setHit(rs.getInt("hit"));
 				board.setIp(rs.getString("ip"));
 				list.add(board);
+				
+//				sql = "select * from product";
+//				
+//				try {
+//					pstmt = conn.prepareStatement(sql);
+//					rs = pstmt.executeQuery();
+//					while(rs.next()) {
+//						// product를 인스턴스 하지 않고 ArrayList에 저장할시 같은 주소에 데이터를 리셋 하게 된다. 주의!!
+//						product = new Product();
+////						String id = rs.getString("p_id");
+////						System.out.println(id);
+//						product.setProductId(rs.getString("p_id"));
+//						product.setPname(rs.getString("p_name"));
+//						product.setUnitPrice(Integer.parseInt(rs.getString("p_unitPrice")));
+//						product.setDescription(rs.getString("p_description"));
+//						product.setCategory(rs.getString("p_category"));
+//						product.setManufacturer(rs.getString("p_manufacturer"));
+//						product.setUnitsInStock(Long.parseLong(rs.getString("p_unitsInStock")));
+//						product.setCondition(rs.getString("p_condition"));
+//						product.setFilename(rs.getString("p_fileName"));
+//						products.add(product);
 
 				if (index < (start + limit) && index <= total_record)
 					index++;

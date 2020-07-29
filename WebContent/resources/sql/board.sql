@@ -9,3 +9,6 @@ create table board (
 	ip varchar(20),
 	primary key(num)
 )default CHARSET=utf8;
+
+truncate table board;
+select * from board;

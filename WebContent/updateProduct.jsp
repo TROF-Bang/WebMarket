@@ -28,7 +28,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
-				<img src="c:/upload/<%=rs.getString("p_filename")%>" alt="image" style="width: 100%" />
+				<img src="<%=rs.getString("p_filename")%>" alt="image" style="width: 100%" />
 			</div>
 			<div class="col-md-7">
 				<form name="newProduct" action="./processUpdateProduct.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">

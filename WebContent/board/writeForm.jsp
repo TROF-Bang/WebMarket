@@ -6,7 +6,7 @@
 %>
 <html>
 <head>
-<link rel="stylesheet" href="../resources/css/bootstrap.css" />
+<link rel="stylesheet" href="./resources/css/bootstrap.css" />
 <title>Board</title>
 </head>
 <script type="text/javascript">

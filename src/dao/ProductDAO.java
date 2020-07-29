@@ -1,4 +1,4 @@
-package test;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -62,6 +62,7 @@ public class ProductDAO {
 		return product;
 	}
 	
+	// 모든 상품 가져오기
 	public ArrayList<Product> getAllProducts() {
 		
 		sql = "select * from product";
