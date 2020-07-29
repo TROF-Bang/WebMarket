@@ -2,7 +2,6 @@ create database WebMarketDB;
 
 USE WebMarketDB;
 
-
 create table members ( 
     id varchar(10) not null,
     password varchar(10) not null,
