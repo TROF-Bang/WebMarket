@@ -1,6 +1,6 @@
 drop table product;
 CREATE TABLE IF NOT EXISTS product(
-	p_id VARCHAR(10) NOT NULL,
+	p_id VARCproductHAR(10) NOT NULL,
 	p_name VARCHAR(20),
 	p_unitPrice  INTEGER,
 	p_description TEXT,
@@ -14,4 +14,4 @@ CREATE TABLE IF NOT EXISTS product(
 
 desc product;
 
-select * from member;
+select * from product;

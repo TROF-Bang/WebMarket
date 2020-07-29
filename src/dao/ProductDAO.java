@@ -108,7 +108,6 @@ public class ProductDAO {
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
 			System.out.println("addProduct");
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, product.getProductId());
@@ -124,7 +123,6 @@ public class ProductDAO {
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("addProduct() ¿¡·¯ : " + e);
-		} finally {
 			try {				
 				if (rs != null) 
 					rs.close();							
@@ -134,7 +132,7 @@ public class ProductDAO {
 					conn.close();
 			} catch (Exception ex) {
 				throw new RuntimeException(ex.getMessage());
-			}		
-		}
+			}	
+		} 
 	}
 }

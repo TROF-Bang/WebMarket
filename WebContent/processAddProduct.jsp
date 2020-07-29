@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="dto.Product"%>
-<%@page import="test.ProductDAO"%>
+<%@page import="dao.ProductDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,6 +11,7 @@
 </head>
 <body>
 	<%
+	request.setCharacterEncoding("UTF-8");
 	ProductDAO dao = ProductDAO.getInstance();
 
 	String id = request.getParameter("productId");

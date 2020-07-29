@@ -9,7 +9,8 @@ public class DBConnection {
 	private static Connection conn;    //DB 커넥션(연결) 객체
     private static final String USERNAME = "root";   //DB 접속시 ID
     private static final String PASSWORD = "1234";    //DB 접속시 패스워드
-    private static final String URL = "jdbc:mysql://localhost:3306/webmarketdb?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
+    // No operations allowed after connection closed 오류 해결을 위한 autoReconnect,validationQuery 설정
+    private static final String URL = "jdbc:mysql://localhost:3306/webmarketdb?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false&autoReconnect=true&validationQuery=select 1";
     
     public static Connection getConnection() {
     	try {
