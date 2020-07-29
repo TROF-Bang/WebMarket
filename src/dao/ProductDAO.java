@@ -47,7 +47,6 @@ public class ProductDAO {
 			}
 		} catch (Exception ex) {
 			System.out.println("getProduct() 에러 : " + ex);
-		} finally {
 			try {				
 				if (rs != null) 
 					rs.close();							
@@ -55,10 +54,10 @@ public class ProductDAO {
 					pstmt.close();				
 				if (conn != null) 
 					conn.close();
-			} catch (Exception ex) {
-				throw new RuntimeException(ex.getMessage());
+			} catch (Exception e) {
+				throw new RuntimeException(e.getMessage());
 			}		
-		}
+		} 
 		return product;
 	}
 	
@@ -88,7 +87,6 @@ public class ProductDAO {
 			}
 		} catch (Exception e) {
 			System.out.println("getAllProducts() 에러 : " + e);
-		} finally {
 			try {
 				if (rs != null)
 					rs.close();

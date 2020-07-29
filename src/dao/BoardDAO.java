@@ -50,7 +50,6 @@ public class BoardDAO {
 				
 			} catch (Exception ex) {
 				System.out.println("getListCount() 에러: " + ex);
-			} finally {			
 				try {				
 					if (rs != null) 
 						rs.close();							
@@ -58,10 +57,10 @@ public class BoardDAO {
 						pstmt.close();				
 					if (conn != null) 
 						conn.close();												
-				} catch (Exception ex) {
-					throw new RuntimeException(ex.getMessage());
+				} catch (Exception e) {
+					throw new RuntimeException(e.getMessage());
 				}		
-			}		
+			} 
 			return x;
 		}
 	
@@ -130,7 +129,6 @@ public class BoardDAO {
 			return list;
 		} catch (Exception ex) {
 			System.out.println("getBoardList() 에러 : " + ex);
-		} finally {
 			try {
 				if (rs != null) 
 					rs.close();							
@@ -138,10 +136,10 @@ public class BoardDAO {
 					pstmt.close();				
 				if (conn != null) 
 					conn.close();
-			} catch (Exception ex) {
-				throw new RuntimeException(ex.getMessage());
+			} catch (Exception e) {
+				throw new RuntimeException(e.getMessage());
 			}			
-		}
+		} 
 		return null;
 	}
 	
@@ -166,7 +164,6 @@ public class BoardDAO {
 			return name;
 		} catch (Exception ex) {
 			System.out.println("getBoardByNum() 에러 : " + ex);
-		} finally {
 			try {				
 				if (rs != null) 
 					rs.close();							
@@ -174,10 +171,10 @@ public class BoardDAO {
 					pstmt.close();				
 				if (conn != null) 
 					conn.close();
-			} catch (Exception ex) {
-				throw new RuntimeException(ex.getMessage());
+			} catch (Exception e) {
+				throw new RuntimeException(e.getMessage());
 			}		
-		}
+		} 
 		return null;
 	}
 	
@@ -203,16 +200,15 @@ public class BoardDAO {
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			System.out.println("insertBoard() 에러 : " + ex);
-		} finally {
 			try {									
 				if (pstmt != null) 
 					pstmt.close();				
 				if (conn != null) 
 					conn.close();
-			} catch (Exception ex) {
-				throw new RuntimeException(ex.getMessage());
+			} catch (Exception e) {
+				throw new RuntimeException(e.getMessage());
 			}		
-		}		
+		} 		
 	}
 	
 	// 선택된 글의 조회 수 증가시키기
