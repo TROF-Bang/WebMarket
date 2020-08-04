@@ -77,15 +77,35 @@
 					<div class="form-group row">
 						<label class="col-sm-2">상태</label>
 						<div class="col-sm-5">
-							<input type="radio" name="condition" value="New "> 신규 제품
+						<% 
+							String condition = rs.getString("p_condition");
+							if(condition.equals("New")) {
+						%>
+							<input type="radio" name="condition" value="New" checked="checked"> 신규 제품
 							<input type="radio" name="condition" value="Old"> 중고 제품
 							<input type="radio" name="condition" value="Refurbished"> 재생 제품
+						<% 
+							} else if(condition.equals("Old")) {
+						%>
+							<input type="radio" name="condition" value="New"> 신규 제품
+							<input type="radio" name="condition" value="Old" checked="checked"> 중고 제품
+							<input type="radio" name="condition" value="Refurbished"> 재생 제품
+						<% 
+							} else {
+						%>
+							<input type="radio" name="condition" value="New"> 신규 제품
+							<input type="radio" name="condition" value="Old"> 중고 제품
+							<input type="radio" name="condition" value="Refurbished" checked="checked"> 재생 제품
+						<% 
+							}
+						%>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2">이미지</label>
 						<div class="col-sm-5">
-							<input type="file" name="productImage" class="form-control">
+							<!-- <input type="file" name="productImage" class="form-control"> -->
+							<input type="text" name="img" class="form-control" value="<%=rs.getString("p_fileName")%>">
 						</div>
 					</div>
 					<div class="form-group row">

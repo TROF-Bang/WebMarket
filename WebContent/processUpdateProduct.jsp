@@ -19,6 +19,7 @@
 	String category = multi.getParameter("category");
 	String unitsInStock = multi.getParameter("unitsInStock");
 	String condition = multi.getParameter("condition");
+	String fileName = multi.getParameter("img");
 
 	Integer price;
 
@@ -34,9 +35,9 @@
 	else
 		stock = Long.valueOf(unitsInStock);
 
-	Enumeration files = multi.getFileNames();
+/* 	Enumeration files = multi.getFileNames();
 	String fname = (String) files.nextElement();
-	String fileName = multi.getFilesystemName(fname);	
+	String fileName = multi.getFilesystemName(fname); */	
 
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
