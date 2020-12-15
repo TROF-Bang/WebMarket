@@ -68,6 +68,9 @@ public class BoardController extends HttpServlet {
 			requestBoardDelete(request);
 			RequestDispatcher rd = request.getRequestDispatcher("/BoardListAction.do");
 			rd.forward(request, response);
+		} else if(command.equals("/BoardReWrite.do")) {
+			RequestDispatcher rd = request.getRequestDispatcher("./board/rewrite.jsp");
+			rd.forward(request, response);
 		}
 	}
 
